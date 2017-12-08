@@ -1,2 +1,2 @@
-# test-app-angular
-test-app-angular
+# webpack-test
+webpack-test
