@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "webpack": "webpack",
     "clean:dist": "rimraf dist && mkdir dist",
-    "build:dev": "npm run clean:dist && webpack-dev-server --open --config webpack/dev.config.ts --hot --inline",
+    "build:test": "npm run clean:dist && npm run webpack -p",
+    "build:dev": "npm run clean:dist && webpack-dev-server --content-base src/ --hot --inline --open",
     "build:prod": "npm run clean:dist && webpack --config webpack/prod.config.ts -p",
     "prebuild": "npm run clean:dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +15,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
   "devDependencies": {
     "@types/node": "^8.0.58",
     "@types/webpack": "^3.8.1",
